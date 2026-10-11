@@ -83,6 +83,54 @@ h2 small{display:block;font-family:Caveat;font-size:1.6rem;color:var(--cyan);fon
 #about .abt{border-radius:200px 200px 28px 28px;overflow:hidden;box-shadow:14px 14px 0 var(--sun)}
 #about .abt img{display:block;width:100%;animation:kb2 16s ease-in-out infinite alternate}
 @keyframes kb2{from{transform:scale(1)}to{transform:scale(1.1)}}
+
+#contact{position:relative;overflow:hidden;padding-bottom:30px}
+#contact>*{position:relative;z-index:1}
+#contact .wave{display:inline-block;transform-origin:70% 70%;animation:wv 2.2s ease-in-out infinite}
+@keyframes wv{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-10deg)}50%{transform:rotate(8deg)}}
+.csub{max-width:560px;font-size:1.05rem;line-height:1.7;margin:6px auto 0}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:30px;width:min(1050px,100%);margin-top:34px;text-align:left;align-items:start}
+@media(max-width:820px){.ct{grid-template-columns:1fr}}
+.cl2{display:grid;gap:14px}
+.cc{display:flex;align-items:center;gap:10px;background:#fff;border-radius:22px;padding:6px 14px 6px 6px;box-shadow:0 8px 0 rgba(20,33,61,.18);transition:.3s}
+.cc:hover{transform:translateX(8px) rotate(-1deg);background:var(--sun);box-shadow:0 8px 0 rgba(20,33,61,.28)}
+.cc a{flex:1;display:flex;align-items:center;gap:14px;color:var(--blue);text-decoration:none;font-weight:800;padding:10px;min-width:0}
+.cc a span{min-width:0;word-break:break-word}
+.cc i{font-style:normal;font-size:1.6rem;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--blue));flex:none;transition:.4s}
+.cc:hover i{transform:rotate(360deg) scale(1.1)}
+.cc small{display:block;color:var(--coral);font-size:.68rem;letter-spacing:1.5px;margin-bottom:2px}
+.cp{border:0;background:var(--blue);color:#fff;font:800 .75rem Montserrat,sans-serif;padding:8px 14px;border-radius:30px;cursor:pointer;transition:.2s}.cp:hover{background:var(--coral);transform:scale(1.08)}
+.go2{color:var(--coral);font-size:1.5rem;padding:0 8px;transition:.3s}.cc:hover .go2{transform:translate(4px,-4px)}
+.post{position:relative;background:#fffdf5;color:#14213D;border-radius:10px;padding:28px 26px 24px;transform:rotate(1.5deg);box-shadow:0 18px 40px rgba(10,20,50,.35);transition:.4s;
+background-image:repeating-linear-gradient(45deg,#FF6B5B 0 14px,transparent 14px 22px,#0B4DB0 22px 36px,transparent 36px 44px);background-size:100% 8px;background-repeat:no-repeat}
+.post:hover{transform:rotate(0)}
+.post h3{font-family:Caveat;font-size:2rem;color:var(--blue);margin:6px 0 14px;max-width:70%}
+.post label{display:block;font-size:.7rem;font-weight:800;letter-spacing:1.5px;color:var(--coral);margin-bottom:12px;text-transform:uppercase}
+.post input,.post textarea{display:block;width:100%;margin-top:4px;border:0;border-bottom:2px dashed #b9c3da;background:transparent;font:600 1rem Montserrat,sans-serif;color:#14213D;padding:8px 2px;outline:0;resize:vertical;transition:.2s}
+.post input:focus,.post textarea:focus{border-bottom-color:var(--coral);background:#fff4cc}
+.stamp{position:absolute;top:22px;right:22px;width:64px;height:76px;border:3px dashed var(--coral);display:grid;place-items:center;font-size:1.8rem;transform:rotate(6deg);background:#fff4cc;border-radius:4px;animation:fl 5s ease-in-out infinite}
+.stamp small{font-size:.5rem;font-weight:800;letter-spacing:1px;color:var(--coral);margin-top:-14px}
+.send{margin-top:6px;border:0;cursor:pointer;background:var(--coral);color:#fff;font:800 1rem Montserrat,sans-serif;padding:13px 28px;border-radius:40px;box-shadow:0 6px 0 #c9483a;transition:.3s}
+.send:hover{transform:translateY(-3px) rotate(-2deg)}.send:active{transform:translateY(3px);box-shadow:0 2px 0 #c9483a}
+.hint{font-size:.72rem;opacity:.65;margin-top:12px}
+.mq{width:calc(100% + 12vw);margin:44px -6vw 0;overflow:hidden;background:rgba(10,20,50,.35);padding:12px 0;transform:rotate(-1.2deg)}
+.mq div{display:flex;width:max-content;animation:mq 25s linear infinite}
+.mq span{white-space:nowrap;font-weight:800;letter-spacing:2px;font-size:.95rem;color:var(--sun);padding-right:10px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.foot{margin-top:22px;font-size:.8rem;opacity:.85}
+#toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:#14213D;color:#fff;padding:12px 24px;border-radius:40px;font-weight:800;opacity:0;pointer-events:none;transition:.35s;z-index:80}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .post{background:#1B2542;color:#FFF4D6}:root:not([data-theme="light"]) .post input,:root:not([data-theme="light"]) .post textarea{color:#FFF4D6}:root:not([data-theme="light"]) .post input:focus,:root:not([data-theme="light"]) .post textarea:focus{background:#10172B}:root:not([data-theme="light"]) .post h3{color:var(--sun)}}
+
+.ct{grid-template-columns:repeat(2,1fr);width:min(860px,100%);margin-top:40px}
+@media(max-width:700px){.ct{grid-template-columns:1fr}}
+.ct .cl2{display:contents}
+#contact{background:
+radial-gradient(circle at 12% 18%,rgba(255,107,91,.55),transparent 38%),
+radial-gradient(circle at 88% 82%,rgba(0,194,224,.45),transparent 40%),
+radial-gradient(circle at 80% 12%,rgba(255,200,60,.28),transparent 30%),
+radial-gradient(rgba(255,255,255,.14) 1.5px,transparent 1.5px) 0 0/28px 28px,
+#0A1740!important;background-size:auto,auto,auto,28px 28px,auto!important;animation:none!important}
 </style></head><body>
 <nav><b>Ayushi Soni</b><div><a href="#home">Home</a><a href="#about">About</a><a href="#work">Work</a><a href="#hobbies">Hobbies</a><a href="#contact">Contact</a></div></nav>
 
@@ -122,9 +170,21 @@ h2 small{display:block;font-family:Caveat;font-size:1.6rem;color:var(--cyan);fon
 <div id="modal"><button id="x" aria-label="Close">×</button><h2 id="mt"></h2><div class="gal" id="gal"></div></div>
 
 <div id="lb"><img alt="Painting"></div>
-<section id="contact"><h2 class="rv"><small>Let's create together</small>Say Hello!</h2>
-<div class="cl"><a href="tel:+919329183289"><small>PHONE</small>9329183289</a><a href="mailto:ayushiartsoni09@gmail.com"><small>EMAIL</small>ayushiartsoni09@gmail.com</a>
-<a href="https://www.linkedin.com/in/ayushi-soni-14532b236" target="_blank" rel="noopener"><small>LINKEDIN</small>Ayushi Soni</a><a href="https://www.behance.net/ayushisoni31" target="_blank" rel="noopener"><small>BEHANCE</small>ayushisoni31</a></div></section>
+<section id="contact">
+
+<h2 class="rv"><small>Let's create together</small>Say Hello! <span class="wave">👋</span></h2>
+<div class="ct">
+<div class="cl2">
+<div class="cc"><a href="tel:+919329183289"><i>📞</i><span><small>PHONE</small>+91 93291 83289</span></a><button class="cp" data-copy="+919329183289" aria-label="Copy phone number">Copy</button></div>
+<div class="cc"><a href="mailto:ayushiartsoni09@gmail.com"><i>💌</i><span><small>EMAIL</small>ayushiartsoni09@gmail.com</span></a><button class="cp" data-copy="ayushiartsoni09@gmail.com" aria-label="Copy email">Copy</button></div>
+<div class="cc"><a href="https://www.linkedin.com/in/ayushi-soni-14532b236" target="_blank" rel="noopener"><i>💼</i><span><small>LINKEDIN</small>Ayushi Soni</span></a><b class="go2">↗</b></div>
+<div class="cc"><a href="https://www.behance.net/ayushisoni31" target="_blank" rel="noopener"><i>🎨</i><span><small>BEHANCE</small>ayushisoni31</span></a><b class="go2">↗</b></div>
+</div>
+</div>
+<div class="mq" aria-hidden="true"><div><span>LET'S WORK TOGETHER ✦ LET'S MAKE SOMETHING WHICH CREATES VALUE ✦ EVERY IDEA STARTS SOMEWHERE. LET'S BEGIN ✦ LET'S STAY CURIOUS AND CREATE ✦ LET'S CONNECT THE DOTS ✦ </span><span>LET'S WORK TOGETHER ✦ LET'S MAKE SOMETHING WHICH CREATES VALUE ✦ EVERY IDEA STARTS SOMEWHERE. LET'S BEGIN ✦ LET'S STAY CURIOUS AND CREATE ✦ LET'S CONNECT THE DOTS ✦ </span></div></div>
+<p class="foot">© 2026 Ayushi Soni · Designed with curiosity</p>
+<div id="toast" role="status">Copied! ✓</div>
+</section>
 
 <script>
 // Add painting image sources here once you have them, e.g. PAINTINGS=["data:image/jpeg;base64,..."]
@@ -148,4 +208,11 @@ const rows=[...echo.children],stacks=[];let T=0,last=performance.now();
 rows.forEach((r,i)=>{const u=r.scrollWidth/14,o=(T*(1+i%3*.4)+sy*(.5+i*.08))%u;r.style.transform=`translateX(${i%2?o-u:-o}px)`});
 const vh=innerHeight;stacks.forEach(s=>{const b=s.getBoundingClientRect(),c=b.top+b.height/2,p=Math.max(0,1-Math.abs(c-vh/2)/(vh*.55));s.style.setProperty('--s',p.toFixed(3))});
 requestAnimationFrame(loop)})(performance.now());
+
+// contact: copy buttons + postcard
+(function(){const t=document.getElementById('toast');let tm;
+function toast(x){t.textContent=x;t.classList.add('on');clearTimeout(tm);tm=setTimeout(()=>t.classList.remove('on'),1800)}
+document.querySelectorAll('.cp').forEach(b=>b.onclick=()=>{const v=b.dataset.copy;
+(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast('Copied! ✓')).catch(()=>{const a=document.createElement('textarea');a.value=v;document.body.appendChild(a);a.select();try{document.execCommand('copy');toast('Copied! ✓')}catch(e){toast(v)}a.remove()})});
+})();
 </script></body></html>
